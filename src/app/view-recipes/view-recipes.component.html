@@ -1,0 +1,38 @@
+<div class="well">
+  <div class="recipe" *ngFor="let recipe of recipes">
+    <a class="recipe{{recipe.id}}" [routerLink]="['/view-recipe', recipe.id]">
+      <div class="media col-md-3">
+        <figure class="pull-left">
+          <img class="media-object img-rounded img-responsive" src={{recipe.imageUrl}}
+               alt="placehold.it/350x250">
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <h4 class=""> {{recipe.name}} </h4>
+        <p>{{recipe.category}}</p>
+        <p class=""> {{recipe.description}}</p>
+      </div>
+      <div class="col-md-3 ">
+        <table class="table">
+          <tr>
+            <th>Ingridience</th>
+            <th>Unit</th>
+            <th>Amount</th>
+          </tr>
+          <tr *ngFor="let ingredience of recipe.ingredience">
+            <td>{{ingredience.type}}</td>
+            <td>{{ingredience.unit}}</td>
+            <td>{{ingredience.amountOfUnit}}</td>
+          </tr>
+        </table>
+      </div>
+
+    </a>
+
+
+  </div>
+
+  <div class="fixClear" style="  "></div>
+</div>
+
+

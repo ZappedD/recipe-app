@@ -1,0 +1,81 @@
+
+  <div class="section-content">
+
+    <h3>Add a recipe to THE BEST RECIPE site</h3>
+    <p>*All fields needs to be filled</p>
+  </div>
+  <div class="add-section">
+    <div class="container">
+      <form #addRecipeForm="ngForm" (ngSubmit)="postARecipe(addRecipeForm.value);">
+        <div class="col-md-6 form-line">
+          <div class="form-group">
+            <label for="recipeName">Recipe Name</label>
+            <input type="text" class="form-control" id="recipeName" placeholder=" Enter Name" name="name" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="preparingTime">Preparing Time</label>
+            <input type="text" class="form-control" id="preparingTime" placeholder=" Time to make" name="preparing_time" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="preparingTime">Category</label>
+            <input type="text" class="form-control" id="category" placeholder=" category" name="category" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="serving_quantity">Srevings</label>
+            <input type="text" class="form-control" id="serving_quantity" placeholder=" Serving quantity. must be number " name="serving_quantity" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="imageUrl">ImageUrl</label>
+            <input type="text" class="form-control" id="imageUrl" placeholder=" imageUrl." name="imageUrl" ngModel>
+          </div>
+
+          <div id="ingredience" >
+            <div class="form-group" *ngFor="let choice of choices" >
+
+              <input type="text" class="form-control" id="{{choice.id}}" placeholder=" {{choice.id}}" >
+              <input type="text" class="form-control" id="{{choice.amountOfUnit}}" placeholder=" {{choice.amountOfUnit}} must be number" >
+              <input type="text" class="form-control" id="{{choice.unit}}" placeholder=" {{choice.unit}}" >
+            </div>
+
+            <button type="button" class="remove" ng-show="$last" (click)="removeChoice();">-</button>
+
+            <button type="button" class="addfields" (click)="addNewChoices();" >Add fields</button>
+
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for ="description"> Description </label>
+            <textarea class="form-control required"  id="description" placeholder="Short description" name="description" ngModel></textarea>
+          </div>
+          <div class="form-group">
+            <label for ="instruktions"> Instruktions </label>
+            <textarea  class="form-control required" id="instruktions" placeholder="Instruktions" name="instruktions" ngModel></textarea>
+          </div>
+          <div>
+
+            <button class="btn btn-default submit" type="submit" value="Skicka in" ><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+
+    <!--<form #addRecipeForm="ngForm" (ngSubmit)="postARecipe(addRecipeForm.value)">-->
+      <!--<label for="recipeName">recipeName<input id="recipeName" type="text" name="recipeName" ngModel></label><br>-->
+      <!--<label for="preparingTime">preparingTime<input id="preparingTime" type="text" name="preparingTime" ngModel></label><br>-->
+      <!--<label for="serving_quantity">serving_quantity<input id="serving_quantity" type="text" name="serving_quantity" ngModel></label><br>-->
+      <!--<label for="imageUrl">imageUrl<input id="imageUrl" type="text" name="imageUrl" ngModel></label><br>-->
+      <!--<label for="description">description<input id="description" type="text" name="description" ngModel></label><br>-->
+      <!--<label for="instruktions">instruktions<input id="instruktions" type="text" name="instruktions" ngModel></label><br>-->
+
+        <!--<input type="submit" value="Skicka in" >-->
+
+    <!--</form>-->
+
+
