@@ -9,29 +9,31 @@ import {LoginService} from '../login.service';
 export class HeaderComponent implements OnInit {
 
   private user;
-  public loggedIn;
+  // public loggedIn;
 
   constructor() {
-    this.isLoggedIn();
+    // this.isLoggedIn();
     this.user = localStorage.getItem('username');
   }
 
   ngOnInit() {
-    this.isLoggedIn();
+    // this.isLoggedIn();
+    this.user = localStorage.getItem('username');
   }
 
-  public isLoggedIn() {
-    if (localStorage.getItem('key') != null) {
-      this.loggedIn = true;
-    } else {
-      this.loggedIn = false;
-    }
-  }
+
+  // public isLoggedIn() {
+  //   if (localStorage.getItem('key') != null) {
+  //     this.loggedIn = true;
+  //   } else {
+  //     this.loggedIn = false;
+  //   }
+  // }
+
 
   public logout() {
     localStorage.clear();
-    this.isLoggedIn();
-    console.log(this.loggedIn);
+    this.user = null;
   }
 
 }

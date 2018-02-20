@@ -37,9 +37,9 @@
               <input type="text" class="form-control" id="{{choice.unit}}" placeholder=" {{choice.unit}}" >
             </div>
 
-            <button type="button" class="remove" ng-show="$last" (click)="removeChoice();">-</button>
+            <button type="button" class="btn btn-default remove" ng-show="$last" (click)="removeChoice();">-</button>
 
-            <button type="button" class="addfields" (click)="addNewChoices();" >Add fields</button>
+            <button type="button" class="btn btn-default addfields" (click)="addNewChoices();" >Add fields</button>
 
 
           </div>
@@ -65,17 +65,4 @@
 
       </form>
     </div>
-
-    <!--<form #addRecipeForm="ngForm" (ngSubmit)="postARecipe(addRecipeForm.value)">-->
-      <!--<label for="recipeName">recipeName<input id="recipeName" type="text" name="recipeName" ngModel></label><br>-->
-      <!--<label for="preparingTime">preparingTime<input id="preparingTime" type="text" name="preparingTime" ngModel></label><br>-->
-      <!--<label for="serving_quantity">serving_quantity<input id="serving_quantity" type="text" name="serving_quantity" ngModel></label><br>-->
-      <!--<label for="imageUrl">imageUrl<input id="imageUrl" type="text" name="imageUrl" ngModel></label><br>-->
-      <!--<label for="description">description<input id="description" type="text" name="description" ngModel></label><br>-->
-      <!--<label for="instruktions">instruktions<input id="instruktions" type="text" name="instruktions" ngModel></label><br>-->
-
-        <!--<input type="submit" value="Skicka in" >-->
-
-    <!--</form>-->
-
 

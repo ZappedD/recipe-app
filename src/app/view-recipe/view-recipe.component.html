@@ -27,9 +27,12 @@
           </tr>
         </table>
         <p>{{recipe.user}} : {{recipe.time_added}}</p>
+        <button class="btn btn-default " *ngIf="recipe.user === user" (click)="removeRecipe();">Remove</button>
+
       </div>
   <div class="clearfix"></div>
 
     </div>
+  <p *ngIf="result === null">Removed </p>
 </div>
 

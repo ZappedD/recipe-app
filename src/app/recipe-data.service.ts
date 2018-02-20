@@ -11,14 +11,12 @@ export class RecipeDataService {
     // let url: string = 'http://localhost:8080/recipe-backend/api/recipes';
     let url: string = 'http://94.46.140.3:8080/jacob-recipe-backend/api/recipes';
     let urlL: string = 'http://localhost:8080/recipe-backend/api/recipes';
-    console.log(urlL);
     return this.http.get(urlL);
   }
 
   public getRecipe(id) {
     let url: string = 'http://94.46.140.3:8080/jacob-recipe-backend/api/recipe/' + id.toString();
     let urlL: string = 'http://localhost:8080/recipe-backend/api/recipe/' + id.toString();
-    console.log(url);
     return this.http.get(urlL);
   }
 
@@ -26,6 +24,11 @@ export class RecipeDataService {
     let url: string = 'http://94.46.140.3:8080/jacob-recipe-backend/api/addRecipe';
     let urlL: string = 'http://localhost:8080/recipe-backend/api/addRecipe';
     return this.http.post(urlL, JSON.stringify(data));
+  }
+  public removeRecipe(id) {
+    let url: string = 'http://94.46.140.3:8080/jacob-recipe-backend/api/delete/recipe/' + id.toString();
+    let urlL: string = 'http://localhost:8080/recipe-backend/api/delete/recipe/' + id.toString();
+    return this.http.delete(urlL);
   }
 
 

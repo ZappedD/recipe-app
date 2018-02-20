@@ -18,6 +18,7 @@ import {RouterModule} from '@angular/router';
 import { ViewRecipeComponent } from './view-recipe/view-recipe.component';
 import { AlertComponent } from './alert/alert.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
     RegisterComponent,
     ViewRecipeComponent,
     AlertComponent,
-    AddRecipeComponent
+    AddRecipeComponent,
+    EditRecipeComponent
   ],
   imports: [
     BrowserModule,

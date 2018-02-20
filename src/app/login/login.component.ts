@@ -12,28 +12,37 @@ export class LoginComponent implements OnInit {
 
   private user;
   private credentials;
+  public result;
 
-  constructor(public loginService: LoginService) {}
+  constructor(public loginService: LoginService) {
+    this.result = null;
+  }
 
   ngOnInit() {
+    this.result = null;
+
     this.user = localStorage.getItem('username');
   }
   public loginUser(data) {
-
+    this.result = null;
     let username : string = (<HTMLInputElement>document.getElementById('username')).value;
     let password : string = (<HTMLInputElement>document.getElementById('password')).value;
     console.log(data);
     console.log(username, password);
 
-    this.credentials = 'Basci ' + btoa(username + ':' + password);
+    this.credentials = 'Basic ' + btoa(username + ':' + password);
     localStorage.setItem('loggedIn', this.credentials);
 
      this.loginService.loginCredentials(this.credentials).subscribe(result => {
       localStorage.setItem('username', username);
+      this.result = true;
     }, error => {
       localStorage.clear();
+      this.result = false;
     });
+
     this.user = localStorage.getItem('username');
+    this.loginService.setUsername(this.user);
   }
 
 }

@@ -31,7 +31,9 @@
       </div>
     </form>
   </div>
-  <h2 *ngIf="user != null"> User: {{user}} </h2>
-
+  <div>
+  <h2 *ngIf="result == false"> User: login failed</h2>
+  <h2 *ngIf="result == true"> User: login sucess</h2>
+  </div>
 
 </div>
