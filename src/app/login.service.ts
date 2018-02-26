@@ -22,14 +22,14 @@ export class LoginService {
     let url: string = 'http://94.46.140.3:8080/jacob-recipe-backend/api/login';
     let urlL: string = 'http://localhost:8080/recipe-backend/api/login';
 
-    let toReturn = this.http.get(urlL,
+    let toReturn = this.http.get(url,
       {headers: new HttpHeaders().set('Authorization', credentials)});
     return toReturn;
   }
   public registerUser(data) {
     let url: string = 'http://94.46.140.3:8080/jacob-recipe-backend/api/create/user';
     let urlL: string = 'http://localhost:8080/recipe-backend/api/create/user';
-    return this.http.post(urlL, JSON.stringify(data)).subscribe(
+    return this.http.post(url, JSON.stringify(data)).subscribe(
       response => {
         console.log(response);
       });
